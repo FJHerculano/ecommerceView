@@ -14,11 +14,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -29,10 +24,15 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/categoria/[categoria]": [
+    "/pesquisa": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/categoria/[categoria].js"
+      "static/chunks/pages/pesquisa.js"
+    ],
+    "/produto/[produto]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/produto/[produto].js"
     ]
   },
   "ampFirstPages": []
