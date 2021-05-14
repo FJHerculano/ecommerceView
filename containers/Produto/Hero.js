@@ -66,25 +66,25 @@ export default class Hero extends Component{
           <h2>Mouse Gamer 2</h2>
         </div>
         <div className="categoria" >
-          <p>Categoria:&nbsp;Mouse Gamer</p>
+          <p>Categoria:&nbsp;<span className="categoria-link">Mouse Gamer</span></p>
         </div>
         <br/>
         <div className="precos" >
           <h2 className="preco-original preco-por">
             R$ 55,00
           </h2>
-          <h2 className="preco-promocao preco-por" >
+          <h2 className="preco-promocao " >
             R$ 45,00 
           </h2>
-          <h4 className="preco-promocao preco-por">
+          <h4 className="preco-parcelado">
             ou em 6x de R$ 7,50 sem juros
           </h4>
         </div>
         <br />
         { this.renderVariacoes() }
         <div className="opcoes">
-          <div className="opcao">
-            <label className="opcao-tab">Quantidade</label>
+          <div className="opcao flex vertical">
+            <label className="opcao-tab">Quantidade:</label>
             <input 
               className="opcao-input"
               type="number"
@@ -104,7 +104,7 @@ export default class Hero extends Component{
 
   render(){
     return (
-      <div className="flex horizontal">
+      <div className="Produto-Hero flex horizontal">
         { this.renderPhotos() }
         { this.renderDetalhes() }
       </div>

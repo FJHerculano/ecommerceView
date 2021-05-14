@@ -4,7 +4,7 @@ export default class Carrinho extends Component {
     render(){
         return(
             <div>
-                <h2>Loja IT - Carrinho</h2>
+                <h2>Loja IT - CarrinhoTop</h2>
             </div>
         )
     }
