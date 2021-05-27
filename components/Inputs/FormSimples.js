@@ -8,6 +8,7 @@ export default class FormSimples extends Component{
             <div className="form-input">
                 { label && <labe>{label}</labe>}
                 <input
+                    type={type}
                     value={value}
                     name={name}
                     placeholder={placeholder}
