@@ -325,8 +325,7 @@
     margin: 10px 0;
     border-bottom: 1px solid #aaaa;
     padding-bottom: 10px; }
-.Carrinho .carrinho-item:last-child {
-    border-bottom: 0; }
+
 .Carrinho .carrinho-cabecalho{
     background-color: #272727;
     color: #FFF; }

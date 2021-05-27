@@ -5,7 +5,10 @@ export default () => (
     
     body { 
         margin: 0;
-        padding: 0; }
+        padding: 0;
+        // background-img: #78909C
+        ;
+    }
     body, * {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
