@@ -20,7 +20,7 @@ const PRODUTOS = [
 ];
 
 class ListaDeProdutos extends Component {
-    renderCabecalhoCarrinho(){
+    renderCabecalhoCarrinho(semAlteracoes){
         return (
             <div className="carrinho-cabecalho no-mb-flex flex">
                 <div className="flex-4"></div>
@@ -33,12 +33,12 @@ class ListaDeProdutos extends Component {
                 <div className="headline flex-1 flex flex-center">
                     <h3 className="text-center">Preço Total</h3>
                 </div>
-                <div className="flex-1"></div>
+               {!semAlteracoes && (<div className="flex-1"></div>)}
             </div>
         )
     }
 
-    renderProduto(item){
+    renderProduto(item, semAlteracoes){
         const foto = item.fotos;
         const nome = item.titulo;
         const { quantidade, precoUnitario } = item;
@@ -54,7 +54,11 @@ class ListaDeProdutos extends Component {
                     </div>
                 </div>
                 <div className="flex-1 flex flex-center">
-                    <input type="number" defaultValue={quantidade} className="produto-quantidade"/>
+                    {
+                        semAlteracoes ? 
+                        (<span>{quantidade}</span>):
+                        (<input type="number" defaultValue={quantidade} className="produto-quantidade"/>)
+                    }
                 </div>
                 <div className="flex-1 flex flex-center">
                     <span>{formatMoney(precoUnitario)}</span>
@@ -62,23 +66,27 @@ class ListaDeProdutos extends Component {
                 <div className="flex-1 flex flex-center">
                     <span>{formatMoney(precoUnitario * quantidade)}</span>
                 </div>
-                <div className="flex-1 flex flex-center">
-                    <span className="btn-remover">Remover</span>
-                </div>
+                { !semAlteracoes && (
+                        <div className="flex-1 flex flex-center">
+                            <span className="btn-remover">Remover</span>
+                        </div>
+                    )
+                }
             </div>
         )
     }
 
-    renderProdutos(){
-        return PRODUTOS.map((item) => this.renderProduto(item))
+    renderProdutos(semAlteracoes){
+        return PRODUTOS.map((item) => this.renderProduto(item,semAlteracoes))
 
     }
 
     render(){
+        const { semAlteracoes } = this.props;
         return(
             <div className="Lista-De-Produtos flex vertical">
-                { this.renderCabecalhoCarrinho() }
-                { this.renderProdutos() }
+                { this.renderCabecalhoCarrinho(semAlteracoes) }
+                { this.renderProdutos(semAlteracoes) }
             </div>
         )
     }

@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
-export default class CheckoutButton extends Component{
+class CheckoutButton extends Component{
     render(){
         return(
-            <div></div>
+            <div className="flex flex-right">
+                <button className="btn btn-cta btn-success">
+                    <span>CONCLUIR PEDIDO</span>
+                </button>
+            </div>
         )
     }
 }
+
+export default CheckoutButton;
