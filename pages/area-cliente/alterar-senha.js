@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
+import Layout from '../../components/Layout';
+import Cabecalho from '../../containers/Cabecalho';
+import AlterarSenhaContainer from '../../containers/AreaDoCliente/AlterarSenha';
+import Rodape from '../../containers/Rodape';
+
 export default class AlterarSenha extends Component {
     render(){
         return(
-            <div>
-                <h2>Loja IT - Alterar Senha</h2>
-            </div>
+            <Layout title="Alterar Senha | LOJA">
+                <Cabecalho/>
+                <AlterarSenhaContainer/>
+                <Rodape/>
+            </Layout>
         )
     }
 }
